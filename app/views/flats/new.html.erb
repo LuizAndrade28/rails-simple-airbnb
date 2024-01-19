@@ -1,0 +1,14 @@
+<div class="container mt-5">
+  <div class="bg-light">
+    <%= simple_form_for (@flat) do |f| %>
+      <h1>New Flat</h1>
+      <%= f.input :name %>
+      <%= f.input :address %>
+      <%= f.input :description %>
+      <%= f.input :price_per_night %>
+      <%= f.input :number_of_guests %>
+      <%= f.submit class: "btn btn-primary" %>
+    <% end %>
+    <p class="mt-2"><%= link_to "Back", flats_path%></p>
+  </div>
+</div>

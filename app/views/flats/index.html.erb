@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="m-2">
+    <h1>All our flats</h1>
+    <h6>All <%= @flats.length %> flats.</h2>
+  </div>
+  <div class="d-flex flex-wrap">
+    <% @flats.each do |flat| %>
+    <div class="card m-2" style="width: 30%;">
+      <%= image_tag('pexels-life-of-pix-2459.jpg') %>
+      <div class="card-body bg-light">
+        <h5 class="card-title"><%= flat.name %></h5>
+        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae placeat, dolorum quasi eos explicabo itaque qui nisi?</p>
+        <%= link_to "More info", flat_path(flat), class: "btn btn-primary" %>
+        <%= link_to "Edit", edit_flat_path(flat), class: "btn btn-warning" %>
+        <%= link_to "Remove", flat_path(flat), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger" %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
